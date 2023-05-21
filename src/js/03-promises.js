@@ -9,9 +9,9 @@ form.addEventListener('submit', onSubmit);
 
 function onSubmit(event) {
   event.preventDefault();
-  firstDelay = Number(form.elements.delay.value);
-  stepDelay = Number(form.elements.step.value);
-  amount = Number(form.elements.amount.value);
+  let firstDelay = Number(form.elements.delay.value);
+  let stepDelay = Number(form.elements.step.value);
+  let amount = Number(form.elements.amount.value);
 
   for (let i = 1; i <= amount; i += 1) {
     delay = firstDelay + (i - 1) * stepDelay;
