@@ -7,6 +7,8 @@ const btn = document.querySelector('button');
 const form = document.querySelector('form');
 form.addEventListener('submit', onSubmit);
 
+let delay = 0;
+
 function onSubmit(event) {
   event.preventDefault();
   let firstDelay = Number(form.elements.delay.value);
@@ -14,7 +16,7 @@ function onSubmit(event) {
   let amount = Number(form.elements.amount.value);
 
   for (let i = 1; i <= amount; i += 1) {
-    let delay = firstDelay + (i - 1) * stepDelay;
+    delay = firstDelay + (i - 1) * stepDelay;
     createPromise(i, delay);
   }
 }
